@@ -5,6 +5,11 @@ def directory_watcher(dir_name = "marvellous"):
 
     if not flag:
         dir_name = os.path.abspath(dir_name)
+    
+    flag = os.path.exists(dir_name)
+    if not flag:
+        print("There is no such directory ", dir_name)
+        exit()
 
     print("Absolute path is ", dir_name)
     for folder_name, sub_folder_names, file_names in os.walk(dir_name):
