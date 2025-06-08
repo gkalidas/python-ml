@@ -8,7 +8,12 @@ def directory_watcher(dir_name = "marvellous"):
     
     flag = os.path.exists(dir_name)
     if not flag:
-        print("There is no such directory ", dir_name)
+        print("The path is invalid.")
+        exit()
+
+    flag = os.path.isdir(dir_name)
+    if not flag:
+        print("The is valid, but the target is not directory.")
         exit()
 
     print("Absolute path is ", dir_name)
